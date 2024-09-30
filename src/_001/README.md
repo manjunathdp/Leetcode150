@@ -23,7 +23,7 @@ We have two sorted arrays **nums1** and **nums2**. The goal is to merge these in
 [2, 5, 6]
 ```
 
-## Your Approach (Sorting After Merge)
+## My Approach (Sorting After Merge)
 
 **Step 1:** Insert elements from **nums2** into the end of **nums1**.
 
@@ -66,7 +66,7 @@ nums2: [2, 5, 6]
 
 ## Comparison of Approaches:
 
-### Your Approach:
+### My Approach:
 
 - Time Complexity: O((m + n)^2) due to sorting after merging.
 - Involves sorting the combined array after copying elements, which can be inefficient for large arrays.
