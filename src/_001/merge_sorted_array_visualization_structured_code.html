@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge Sorted Array: Visual Explanation</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f0f8ff; }
+        h2 { color: #333; }
+        .step { margin-bottom: 20px; padding: 15px; border: 2px solid #ccc; background-color: #e6f7ff; border-radius: 5px; }
+        .array { margin: 10px 0; display: flex; }
+        .element { padding: 12px; margin: 2px; background-color: #ffffff; border: 2px solid #ffb3b3; border-radius: 4px; width: 40px; text-align: center; font-weight: bold; }
+        .highlight { background-color: #b3ffcc; border-color: #66ff99; }
+        .highlight-nums2 { background-color: #ffd9b3; border-color: #ff9933; }
+        code { background-color: #f9f9f9; border: 1px solid #ddd; padding: 10px; display: block; margin: 10px 0; white-space: pre-wrap; }
+        h2 { color: #0059b3; }
+    </style>
+</head>
+<body>
+
+    <h1 style="color: #ff6600;">Merge Sorted Array</h1>
+
+    <h2>Initial Setup</h2>
+    <div class="step">
+        <p>We have two sorted arrays <strong>nums1</strong> and <strong>nums2</strong>. The goal is to merge these into a sorted array inside <strong>nums1</strong>.</p>
+        <div class="array">
+            <div class="element">1</div>
+            <div class="element">2</div>
+            <div class="element">3</div>
+            <div class="element">0</div>
+            <div class="element">0</div>
+            <div class="element">0</div>
+        </div>
+        <p>And the array <strong>nums2</strong>:</p>
+        <div class="array highlight-nums2">
+            <div class="element">2</div>
+            <div class="element">5</div>
+            <div class="element">6</div>
+        </div>
+    </div>
+
+    <h2>Your Approach (Sorting After Merge)</h2>
+    <div class="step">
+        <p><strong>Step 1:</strong> Insert elements from <strong>nums2</strong> into the end of <strong>nums1</strong>.</p>
+        <div class="array">
+            <div class="element">1</div>
+            <div class="element">2</div>
+            <div class="element">3</div>
+            <div class="element highlight">2</div>
+            <div class="element highlight">5</div>
+            <div class="element highlight">6</div>
+        </div>
+    </div>
+
+    <div class="step">
+        <p><strong>Step 2:</strong> Sort the array.</p>
+        <div class="array">
+            <div class="element highlight">1</div>
+            <div class="element highlight">2</div>
+            <div class="element highlight">2</div>
+            <div class="element">3</div>
+            <div class="element">5</div>
+            <div class="element">6</div>
+        </div>
+    </div>
+
+    <h2>Efficient Approach (Two-pointer Technique)</h2>
+    <div class="step">
+        <p><strong>Step 1:</strong> Initialize pointers <strong>i</strong>, <strong>j</strong>, and <strong>k</strong>.</p>
+        <div class="array">
+            <div class="element">1</div>
+            <div class="element">2</div>
+            <div class="element">3</div>
+            <div class="element">0</div>
+            <div class="element">0</div>
+            <div class="element">0</div>
+        </div>
+        <p>Array <strong>nums2</strong> remains unchanged:</p>
+        <div class="array highlight-nums2">
+            <div class="element">2</div>
+            <div class="element">5</div>
+            <div class="element">6</div>
+        </div>
+    </div>
+
+    <div class="step">
+        <p><strong>Step 2:</strong> Start merging from the end, compare <strong>nums1[i]</strong> and <strong>nums2[j]</strong>. Place the larger value in <strong>nums1[k]</strong>.</p>
+        <div class="array">
+            <div class="element">1</div>
+            <div class="element">2</div>
+            <div class="element">3</div>
+            <div class="element">0</div>
+            <div class="element">0</div>
+            <div class="element highlight">6</div>
+        </div>
+        <p>Pointers move accordingly.</p>
+    </div>
+
+    <div class="step">
+        <p><strong>Step 3:</strong> Continue merging. <strong>nums1[k]</strong> gets <strong>5</strong> next.</p>
+        <div class="array">
+            <div class="element">1</div>
+            <div class="element">2</div>
+            <div class="element">3</div>
+            <div class="element">0</div>
+            <div class="element highlight">5</div>
+            <div class="element">6</div>
+        </div>
+    </div>
+
+    <div class="step">
+        <p><strong>Step 4:</strong> Continue until all elements are merged.</p>
+        <div class="array">
+            <div class="element">1</div>
+            <div class="element highlight">2</div>
+            <div class="element highlight">2</div>
+            <div class="element">3</div>
+            <div class="element">5</div>
+            <div class="element">6</div>
+        </div>
+    </div>
+
+    <h2>Comparison of Approaches:</h2>
+    <div class="step" style="background-color: #ffe6e6;">
+        <p><strong>Your Approach:</strong> 
+        <ul>
+            <li>Time Complexity: O((m + n)^2) due to sorting after merging.</li>
+            <li>Involves sorting the combined array after copying elements, which can be inefficient for large arrays.</li>
+        </ul>
+        </p>
+    </div>
+    <div class="step" style="background-color: #e6ffe6;">
+        <p><strong>Efficient Approach (Two-pointer technique):</strong> 
+        <ul>
+            <li>Time Complexity: O(m + n) since it merges the arrays in-place in a single pass.</li>
+            <li>Does not require sorting after merging, which makes it much faster for larger arrays.</li>
+        </ul>
+        </p>
+    </div>
+
+    <h2>Code Comparison:</h2>
+    <h3>Your Approach (Sorting after merging):</h3>
+    <code>
+    class Solution {
+        public void merge(int[] nums1, int m, int[] nums2, int n) {
+            for (int i = m; i < m + n; i++) {
+                nums1[i] = nums2[i - m];
+            }
+            for (int i = 0; i < m + n; i++) {
+                for (int j = i + 1; j < m + n; j++) {
+                    if (nums1[i] > nums1[j]) {
+                        int temp = nums1[i];
+                        nums1[i] = nums1[j];
+                        nums1[j] = temp;
+                    }
+                }
+            }
+        }
+    }
+    </code>
+
+    <h3>Efficient Approach (Two-pointer technique):</h3>
+    <code>
+    class Solution {
+        public void merge(int[] nums1, int m, int[] nums2, int n) {
+            int i = m - 1;
+            int j = n - 1;
+            int k = m + n - 1;
+            while (i >= 0 && j >= 0) {
+                if (nums1[i] > nums2[j]) {
+                    nums1[k--] = nums1[i--];
+                } else {
+                    nums1[k--] = nums2[j--];
+                }
+            }
+            while (j >= 0) {
+                nums1[k--] = nums2[j--];
+            }
+        }
+    }
+    </code>
+
+</body>
+</html>
