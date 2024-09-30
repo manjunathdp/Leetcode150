@@ -78,7 +78,7 @@ nums2: [2, 5, 6]
 
 ## Code Comparison:
 
-### Your Approach (Sorting after merging):
+### My Approach (Sorting after merging):
 
 ```java
 class Solution {
