@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Remove Element - Solution Explanation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #f0f8ff;
+      }
+      h1 {
+        color: #4caf50;
+        text-align: center;
+      }
+      .section {
+        background-color: #e6f7ff;
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        border: 2px solid #b3daff;
+      }
+      .inline-code {
+        display: inline-block;
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        padding: 2px 5px;
+        border-radius: 5px;
+        font-family: "Courier New", Courier, monospace;
+      }
+      .visual {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+      }
+      .visual div {
+        background-color: #ffcccb;
+        padding: 10px;
+        margin: 5px;
+        border-radius: 8px;
+        border: 1px solid #f08080;
+        color: #333;
+        text-align: center;
+        width: 60px;
+      }
+      code {
+        display: block;
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Remove Element - Solution Explanation</h1>
+
+    <div class="section">
+      <h2>Question</h2>
+      <p>
+        <strong>Problem:</strong> Given an integer array
+        <span class="inline-code">nums</span> and an integer
+        <span class="inline-code">val</span>, remove all occurrences of
+        <span class="inline-code">val</span> in-place. The order of the elements
+        may be changed. Then return the number of elements in
+        <span class="inline-code">nums</span> which are not equal to
+        <span class="inline-code">val</span>.
+      </p>
+      <p>
+        After removing the occurrences of <span class="inline-code">val</span>,
+        the first <span class="inline-code">k</span> elements of
+        <span class="inline-code">nums</span> should contain the elements which
+        are not equal to <span class="inline-code">val</span>, while the
+        remaining elements of <span class="inline-code">nums</span> do not
+        matter.
+      </p>
+      <p><strong>Example:</strong></p>
+      <p>
+        <strong>Input:</strong>
+        <span class="inline-code">nums = [0,1,2,2,3,0,4,2]</span>,
+        <span class="inline-code">val = 2</span>
+      </p>
+      <p>
+        <strong>Output:</strong> 5,
+        <span class="inline-code">nums = [0,1,4,0,3,_,_,_]</span>
+      </p>
+      <p>
+        <strong>Explanation:</strong> Your function should return
+        <span class="inline-code">k = 5</span>, and the first 5 elements of
+        <span class="inline-code">nums</span> contain 0, 1, 4, 0, and 3. The
+        remaining elements (underscores) do not matter.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Step-by-Step Explanation with Visualization</h2>
+      <p>
+        We will iterate over the array, and whenever we encounter an element not
+        equal to <span class="inline-code">val</span>, we move it to the front
+        of the array. We maintain a pointer
+        <span class="inline-code">p</span> to track the position of the last
+        valid element.
+      </p>
+
+      <p>
+        Let's take the example
+        <span class="inline-code">nums = [0,1,2,2,3,0,4,2]</span> and
+        <span class="inline-code">val = 2</span>:
+      </p>
+
+      <!-- Initial array display -->
+      <div class="visual array">
+        <div class="box">0</div>
+        <div class="box">1</div>
+        <div class="box" style="background-color: #90ee90">2</div>
+        <div class="box" style="background-color: #90ee90">2</div>
+        <div class="box">3</div>
+        <div class="box">0</div>
+        <div class="box">4</div>
+        <div class="box" style="background-color: #90ee90">2</div>
+      </div>
+
+      <p>
+        <strong>Step 1:</strong> Initialize
+        <span class="inline-code">p = 0</span>. Iterate through the array:
+      </p>
+
+      <!-- Iteration 1 -->
+      <p>
+        <strong>Iteration 1:</strong> nums[0] = 0, which is not equal to val.
+        Move it to nums[p] and increment p.
+      </p>
+      <div class="visual array">
+        <div class="box" style="background-color: #add8e6">0</div>
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">0</div>
+        <div class="box">4</div>
+        <div class="box">2</div>
+      </div>
+
+      <!-- Iteration 2 -->
+      <p>
+        <strong>Iteration 2:</strong> nums[1] = 1, which is not equal to val.
+        Move it to nums[p] and increment p.
+      </p>
+      <div class="visual array">
+        <div class="box" style="background-color: #add8e6">0</div>
+        <div class="box" style="background-color: #add8e6">1</div>
+        <div class="box">2</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">0</div>
+        <div class="box">4</div>
+        <div class="box">2</div>
+      </div>
+
+      <!-- Iteration 3 -->
+      <p>
+        <strong>Iteration 3:</strong> nums[2] = 2, which is equal to val. Do
+        nothing.
+      </p>
+      <div class="visual array">
+        <div class="box" style="background-color: #add8e6">0</div>
+        <div class="box" style="background-color: #add8e6">1</div>
+        <div class="box" style="background-color: #90ee90">2</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">0</div>
+        <div class="box">4</div>
+        <div class="box">2</div>
+      </div>
+
+      <!-- Iteration 4 -->
+      <p>
+        <strong>Iteration 4:</strong> nums[3] = 2, which is equal to val. Do
+        nothing.
+      </p>
+
+      <!-- Iteration 5 -->
+      <p>
+        <strong>Iteration 5:</strong> nums[4] = 3, which is not equal to val.
+        Move it to nums[p] and increment p.
+      </p>
+      <div class="visual array">
+        <div class="box" style="background-color: #add8e6">0</div>
+        <div class="box" style="background-color: #add8e6">1</div>
+        <div class="box">_</div>
+        <div class="box">_</div>
+        <div class="box" style="background-color: #add8e6">3</div>
+        <div class="box">0</div>
+        <div class="box">4</div>
+        <div class="box">2</div>
+      </div>
+
+      <!-- Iteration 6 -->
+      <p>
+        <strong>Iteration 6:</strong> nums[5] = 0, which is not equal to val.
+        Move it to nums[p] and increment p.
+      </p>
+      <div class="visual array">
+        <div class="box" style="background-color: #add8e6">0</div>
+        <div class="box" style="background-color: #add8e6">1</div>
+        <div class="box">_</div>
+        <div class="box">_</div>
+        <div class="box" style="background-color: #add8e6">3</div>
+        <div class="box" style="background-color: #add8e6">0</div>
+        <div class="box">4</div>
+        <div class="box">2</div>
+      </div>
+
+      <!-- Iteration 7 -->
+      <p>
+        <strong>Iteration 7:</strong> nums[6] = 4, which is not equal to val.
+        Move it to nums[p] and increment p.
+      </p>
+      <div class="visual array">
+        <div class="box" style="background-color: #add8e6">0</div>
+        <div class="box" style="background-color: #add8e6">1</div>
+        <div class="box">_</div>
+        <div class="box">_</div>
+        <div class="box" style="background-color: #add8e6">3</div>
+        <div class="box" style="background-color: #add8e6">0</div>
+        <div class="box" style="background-color: #add8e6">4</div>
+        <div class="box">2</div>
+      </div>
+
+      <p>
+        <strong>Step 2:</strong> After iterating through the array, the first 5
+        elements are the non-<span class="inline-code">val</span> values. Return
+        <span class="inline-code">p = 5</span>, which represents the count of
+        valid elements.
+      </p>
+    </div>
+
+    <style>
+      .array {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .box {
+        width: 40px;
+        height: 40px;
+        background-color: #f0f8ff;
+        border: 2px solid #4caf50;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 5px;
+        font-size: 18px;
+        border-radius: 5px;
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      .box:last-child {
+        margin-right: 0;
+      }
+    </style>
+
+    <div class="section">
+      <h2>Time and Space Complexity</h2>
+      <p>
+        <strong>Time Complexity:</strong> O(n), where n is the length of the
+        array. We only iterate through the array once.
+      </p>
+      <p>
+        <strong>Space Complexity:</strong> O(1), since we do not use any extra
+        space that grows with the input size.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Conclusion</h2>
+      <p>
+        This solution efficiently removes the specified value from the array
+        while maintaining a low time and space complexity. The final result
+        gives the count of valid elements and leaves the rest of the array
+        unchanged.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Java Code</h2>
+      <code>
+        class Solution {<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;public int removeElement(int[] nums, int val)
+        {<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int p = 0;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (int i = 0; i <
+        nums.length; i++) {<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if
+        (nums[i] != val) {<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nums[p]
+        = nums[i];<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p++;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return p;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        }
+      </code>
+    </div>
+  </body>
+</html>
