@@ -1,4 +1,4 @@
-# Remove Element - Solution Explanation
+# (#27) Remove Element - Solution Explanation
 
 ## Problem
 
