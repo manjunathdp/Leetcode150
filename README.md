@@ -14,20 +14,20 @@ The repository is organized into numbered folders based on the problem solved. E
 
 ### Completed Problems
 
-1. **Problem : Merge Sorted Array**  
-   - Path: `src/_001/`
-   - Solution: [MergeSortedArray.java](src/_001/MergeSortedArray.java)
-   - Explanation: [merge_sorted_array_visualization_structured_code.html](src/_001/merge_sorted_array_visualization_structured_code.html)
+1. **Problem : Merge Sorted Array**
+   - [Path](src/_001): `src/_001/`
+   - [Solution](src/_001/MergeSortedArray.java): `MergeSortedArray.java`
+   - [Explanation](src/_001/merge_sorted_array_visualization_structured_code.html): `merge_sorted_array_visualization_structured_code.html`
 
-2. **Problem : Remove Element**  
-   - Path: `src/_002/`
-   - Solution: [RemoveElement.java](src/_002/RemoveElement.java)
-   - Explanation: [remove_element.html](src/_002/remove_element.html)
+2. **Problem : Remove Element**
+   - [Path](src/_002): `src/_002/`
+   - [Solution](src/_002/RemoveElement.java): `RemoveElement.java`
+   - [Explanation](src/_002/remove_element.html): `remove_element.html`
 
-3. **Problem : Remove Duplicates from Sorted Array**  
-   - Path: `src/_003/`
-   - Solution: [RemoveDuplicates.java](src/_003/RemoveDuplicates.java)
-   - Explanation: [Remove Duplicates from Sorted Array Solved.html](src/_003/Remove%20Duplicates%20from%20Sorted%20Array%20Solved.html)
+3. **Problem : Remove Duplicates from Sorted Array**
+   - [Path](src/_003): `src/_003/`
+   - [Solution](src/_003/RemoveDuplicates.java): `RemoveDuplicates.java`
+   - [Explanation](src/_003/Remove%20Duplicates%20from%20Sorted%20Array%20Solved.html): `Remove Duplicates from Sorted Array Solved.html`
 
 ## How to Use
 
