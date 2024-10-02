@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Remove Duplicates - Solution Explanation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #f0f8ff;
+      }
+      h1 {
+        color: #4caf50;
+        text-align: center;
+      }
+      .section {
+        background-color: #e6f7ff;
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        border: 2px solid #b3daff;
+      }
+      .inline-code {
+        display: inline-block;
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        padding: 2px 5px;
+        border-radius: 5px;
+        font-family: "Courier New", Courier, monospace;
+      }
+      .visual {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+      }
+      .visual div {
+        background-color: #ffcccb;
+        padding: 10px;
+        margin: 5px;
+        border-radius: 8px;
+        border: 1px solid #f08080;
+        color: #333;
+        text-align: center;
+        width: 60px;
+      }
+      code {
+        display: block;
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Remove Duplicates - Solution Explanation</h1>
+
+    <div class="section">
+      <h2>Question</h2>
+      <p>
+        <strong>Problem:</strong> Given a sorted integer array <span class="inline-code">nums</span>, 
+        remove duplicates in-place so each unique element appears only once, 
+        and return the number of unique elements <span class="inline-code">k</span>.
+      </p>
+      <p>
+        Modify the array such that the first <span class="inline-code">k</span> elements 
+        contain the unique elements in the original order. The remaining elements don't matter.
+      </p>
+      <p><strong>Example:</strong></p>
+      <p><strong>Input:</strong> nums = [0,0,1,1,1,2,2,3,3,4]</p>
+      <p><strong>Output:</strong> 5, nums = [0,1,2,3,4,_,_,_,_,_]</p>
+    </div>
+
+    <div class="section">
+      <h2>Step-by-Step Explanation with Visualization</h2>
+      <p>We use two pointers to remove duplicates efficiently.</p>
+
+      <p>
+        Let's take <span class="inline-code">nums = [0,0,1,1,1,2,2,3,3,4]</span>:
+      </p>
+
+      <div class="visual array">
+        <div class="box">0</div>
+        <div class="box">0</div>
+        <div class="box">1</div>
+        <div class="box">1</div>
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+      </div>
+
+      <p>
+        <strong>Step 1:</strong> Initialize <span class="inline-code">j = 0</span>. Start iterating from the second element.
+      </p>
+
+      <p>
+        <strong>Iteration 1:</strong> <span class="inline-code">nums[1] == nums[0]</span>, so skip it.
+      </p>
+
+      <p>
+        <strong>Iteration 2:</strong> <span class="inline-code">nums[2] != nums[0]</span>. Increment <span class="inline-code">j</span> and move the unique element.
+      </p>
+      
+      <div class="visual array">
+        <div class="box" style="background-color: #add8e6">0</div>
+        <div class="box" style="background-color: #add8e6">1</div>
+        <div class="box">1</div>
+        <div class="box">1</div>
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+      </div>
+
+      <p>
+        <strong>Iteration 3 and 4:</strong> <span class="inline-code">nums[3] == nums[2]</span>, so skip them.
+      </p>
+
+      <p>
+        <strong>Iteration 5:</strong> <span class="inline-code">nums[5] != nums[1]</span>. Increment <span class="inline-code">j</span> and move the unique element.
+      </p>
+
+      <div class="visual array">
+        <div class="box" style="background-color: #add8e6">0</div>
+        <div class="box" style="background-color: #add8e6">1</div>
+        <div class="box" style="background-color: #add8e6">2</div>
+        <div class="box">1</div>
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+      </div>
+
+      <p>
+        Continue this process for each element. After all iterations, the first five elements of the array contain unique values: <span class="inline-code">[0, 1, 2, 3, 4]</span>.
+      </p>
+
+      <div class="visual array">
+        <div class="box" style="background-color: #add8e6">0</div>
+        <div class="box" style="background-color: #add8e6">1</div>
+        <div class="box" style="background-color: #add8e6">2</div>
+        <div class="box" style="background-color: #add8e6">3</div>
+        <div class="box" style="background-color: #add8e6">4</div>
+        <div class="box">_</div>
+        <div class="box">_</div>
+        <div class="box">_</div>
+        <div class="box">_</div>
+        <div class="box">_</div>
+      </div>
+
+      <p><strong>Step 2:</strong> Return <span class="inline-code">k = 5</span>, which is the number of unique elements.</p>
+    </div>
+
+    <div class="section">
+      <h2>Time and Space Complexity</h2>
+      <p>
+        <strong>Time Complexity:</strong> O(n), as we iterate through the array once.
+      </p>
+      <p>
+        <strong>Space Complexity:</strong> O(1), since no extra space is used.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Conclusion</h2>
+      <p>
+        This solution efficiently removes duplicates while maintaining a low time and space complexity.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Java Code</h2>
+      <code>
+        class Solution {<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;public int removeDuplicates(int[] nums) {<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int j = 0;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (int i = 1; i < nums.length; i++) {<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (nums[i] != nums[j]) {<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j++;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nums[j] = nums[i];<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return j + 1;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        }
+      </code>
+    </div>
+  </body>
+</html>
