@@ -1,5 +1,5 @@
 
-# LeetCode Top 150 Interview Questions
+# LeetCode Top 150 Interview Questions.
 
 This repository contains solutions to the **Top 150 Interview Questions** on LeetCode. The aim is to help others and myself practice and understand essential coding problems commonly asked in technical interviews.
 
