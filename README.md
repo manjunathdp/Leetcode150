@@ -14,20 +14,20 @@ The repository is organized into numbered folders based on the problem solved. E
 
 ### Completed Problems
 
-1. **Problem 1: Merge Sorted Array**  
+1. **Problem : Merge Sorted Array**  
    - Path: `src/_001/`
    - Solution: [MergeSortedArray.java](src/_001/MergeSortedArray.java)
    - Explanation: [merge_sorted_array_visualization_structured_code.html](src/_001/merge_sorted_array_visualization_structured_code.html)
 
-2. **Problem 2: Remove Element**  
+2. **Problem : Remove Element**  
    - Path: `src/_002/`
    - Solution: [RemoveElement.java](src/_002/RemoveElement.java)
    - Explanation: [remove_element.html](src/_002/remove_element.html)
 
-3. **Problem 3: Remove Duplicates from Sorted Array**  
+3. **Problem : Remove Duplicates from Sorted Array**  
    - Path: `src/_003/`
    - Solution: [RemoveDuplicates.java](src/_003/RemoveDuplicates.java)
-   - Explanation: [Remove Duplicates from Sorted Array Solved.html](src/_003/Remove Duplicates from Sorted Array Solved.html)
+   - Explanation: [Remove Duplicates from Sorted Array Solved.html](src/_003/Remove%20Duplicates%20from%20Sorted%20Array%20Solved.html)
 
 ## How to Use
 
