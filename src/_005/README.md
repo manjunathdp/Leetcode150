@@ -44,7 +44,9 @@ We initialize `candidate = 0` and `points = 0`. We will iterate through the arra
 
 | 2 | 2 | 1 | 1 | 1 | 2 | 2 |
 |---|---|---|---|---|---|---|
-| ↑ |   |   |   |   |   |   |  
+| ↑ |   |   |   |   |   |   |
+|---|---|---|---|---|---|---| 
+
 **Candidate:** 2, **Points:** 1
 
 ---
