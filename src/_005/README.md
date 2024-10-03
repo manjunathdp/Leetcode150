@@ -56,7 +56,8 @@ We initialize `candidate = 0` and `points = 0`. We will iterate through the arra
 
 | 2 | 2 | 1 | 1 | 1 | 2 | 2 |
 |---|---|---|---|---|---|---|
-| ↑ | ↑ |   |   |   |   |   |  
+| ↑ | ↑ |   |   |   |   |   | 
+
 **Candidate:** 2, **Points:** 2
 
 ---
@@ -67,7 +68,8 @@ We initialize `candidate = 0` and `points = 0`. We will iterate through the arra
 
 | 2 | 2 | 1 | 1 | 1 | 2 | 2 |
 |---|---|---|---|---|---|---|
-| ↑ | ↑ | ↑ |   |   |   |   |  
+| ↑ | ↑ | ↑ |   |   |   |   | 
+
 **Candidate:** 2, **Points:** 1
 
 ---
@@ -79,6 +81,7 @@ We initialize `candidate = 0` and `points = 0`. We will iterate through the arra
 | 2 | 2 | 1 | 1 | 1 | 2 | 2 |
 |---|---|---|---|---|---|---|
 | ↑ | ↑ | ↑ | ↑ |   |   |   |  
+
 **Candidate:** 2, **Points:** 0
 
 ---
@@ -90,6 +93,7 @@ We initialize `candidate = 0` and `points = 0`. We will iterate through the arra
 | 2 | 2 | 1 | 1 | 1 | 2 | 2 |
 |---|---|---|---|---|---|---|
 | ↑ | ↑ | ↑ | ↑ | ↑ |   |   |  
+
 **Candidate:** 1, **Points:** 1
 
 ---
@@ -101,6 +105,7 @@ We initialize `candidate = 0` and `points = 0`. We will iterate through the arra
 | 2 | 2 | 1 | 1 | 1 | 2 | 2 |
 |---|---|---|---|---|---|---|
 | ↑ | ↑ | ↑ | ↑ | ↑ | ↑ |   |  
+
 **Candidate:** 1, **Points:** 0
 
 ---
@@ -112,6 +117,7 @@ We initialize `candidate = 0` and `points = 0`. We will iterate through the arra
 | 2 | 2 | 1 | 1 | 1 | 2 | 2 |
 |---|---|---|---|---|---|---|
 | ↑ | ↑ | ↑ | ↑ | ↑ | ↑ | ↑ |  
+
 **Candidate:** 2, **Points:** 1
 
 ---
