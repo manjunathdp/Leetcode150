@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Remove Duplicates 2 - Solution Explanation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #f0f8ff;
+      }
+      h1 {
+        color: #4caf50;
+        text-align: center;
+      }
+      .section {
+        background-color: #e6f7ff;
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        border: 2px solid #b3daff;
+      }
+      .inline-code {
+        display: inline-block;
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        padding: 2px 5px;
+        border-radius: 5px;
+        font-family: "Courier New", Courier, monospace;
+      }
+      .visual {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+      }
+      .visual div {
+        background-color: #ffcccb;
+        padding: 10px;
+        margin: 5px;
+        border-radius: 8px;
+        border: 1px solid #f08080;
+        color: #333;
+        text-align: center;
+        width: 60px;
+      }
+      code {
+        display: block;
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Remove Duplicates 2 - Solution Explanation</h1>
+
+    <div class="section">
+      <h2>Question</h2>
+      <p>
+        <strong>Problem:</strong> Given an integer array
+        <span class="inline-code">nums</span> sorted in non-decreasing order,
+        remove duplicates in-place such that each unique element appears at most
+        twice. The relative order of elements should be maintained.
+      </p>
+      <p>
+        Modify the array in-place and return the number of elements in
+        <span class="inline-code">nums</span> after duplicates have been
+        removed.
+      </p>
+      <p><strong>Example:</strong></p>
+      <p>
+        <strong>Input:</strong>
+        <span class="inline-code">nums = [1,1,1,2,2,3]</span>
+      </p>
+      <p>
+        <strong>Output:</strong> 5,
+        <span class="inline-code">nums = [1,1,2,2,3,_]</span>
+      </p>
+      <p>
+        <strong>Explanation:</strong> Your function should return
+        <span class="inline-code">k = 5</span>, and the first 5 elements of
+        <span class="inline-code">nums</span> should contain 1, 1, 2, 2, and 3.
+        The remaining elements (underscores) do not matter.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Step-by-Step Explanation with Visualization</h2>
+      <p>
+        We will iterate through the array and allow each unique element to
+        appear at most twice. We use a
+        <span class="inline-code">count</span> pointer to track where we place
+        the next valid element.
+      </p>
+
+      <p>
+        Let's take the example
+        <span class="inline-code">nums = [1,1,1,2,2,3]</span>:
+      </p>
+
+      <!-- Initial array display -->
+      <div class="visual array">
+        <div class="box">1</div>
+        <div class="box">1</div>
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+      </div>
+
+      <p>
+        <strong>Step 1:</strong> Initialize
+        <span class="inline-code">count = 0</span>. Iterate through the array:
+      </p>
+
+      <!-- Iteration 1 -->
+      <p>
+        <strong>Iteration 1:</strong> nums[0] = 1. It is the first occurrence,
+        so we place it at nums[count] and increment count.
+      </p>
+      <div class="visual array">
+        <div class="box" style="background-color: #add8e6">1</div>
+        <div class="box">1</div>
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+      </div>
+
+      <!-- Iteration 2 -->
+      <p>
+        <strong>Iteration 2:</strong> nums[1] = 1. Since we haven't seen two
+        occurrences of 1 yet, place it at nums[count] and increment count.
+      </p>
+      <div class="visual array">
+        <div class="box" style="background-color: #add8e6">1</div>
+        <div class="box" style="background-color: #add8e6">1</div>
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+      </div>
+
+      <!-- Iteration 3 -->
+      <p>
+        <strong>Iteration 3:</strong> nums[2] = 1. We've already placed two
+        occurrences of 1, so skip this element.
+      </p>
+
+      <!-- Iteration 4 -->
+      <p>
+        <strong>Iteration 4:</strong> nums[3] = 2. It is the first occurrence of
+        2, so place it at nums[count] and increment count.
+      </p>
+      <div class="visual array">
+        <div class="box" style="background-color: #add8e6">1</div>
+        <div class="box" style="background-color: #add8e6">1</div>
+        <div class="box">2</div>
+        <div class="box">2</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+      </div>
+
+      <!-- Iteration 5 -->
+      <p>
+        <strong>Iteration 5:</strong> nums[4] = 2. Since we haven't seen two
+        occurrences of 2 yet, place it at nums[count] and increment count.
+      </p>
+      <div class="visual array">
+        <div class="box" style="background-color: #add8e6">1</div>
+        <div class="box" style="background-color: #add8e6">1</div>
+        <div class="box">2</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">_</div>
+      </div>
+
+      <!-- Iteration 6 -->
+      <p>
+        <strong>Iteration 6:</strong> nums[5] = 3. It is the first occurrence of
+        3, so place it at nums[count] and increment count.
+      </p>
+      <div class="visual array">
+        <div class="box" style="background-color: #add8e6">1</div>
+        <div class="box" style="background-color: #add8e6">1</div>
+        <div class="box">2</div>
+        <div class="box">2</div>
+        <div class="box" style="background-color: #add8e6">3</div>
+        <div class="box">_</div>
+      </div>
+
+      <p>
+        <strong>Step 2:</strong> After iterating through the array, the first 5
+        elements are the valid elements. Return
+        <span class="inline-code">k = 5</span>.
+      </p>
+    </div>
+
+    <style>
+      .array {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .box {
+        width: 40px;
+        height: 40px;
+        background-color: #f0f8ff;
+        border: 2px solid #4caf50;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 5px;
+        font-size: 18px;
+        border-radius: 5px;
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      .box:last-child {
+        margin-right: 0;
+      }
+    </style>
+
+    <div class="section">
+      <h2>Time and Space Complexity</h2>
+      <p>
+        <strong>Time Complexity:</strong> O(n), where n is the length of the
+        array. We iterate through the array once.
+      </p>
+      <p>
+        <strong>Space Complexity:</strong> O(1), since we modify the array
+        in-place without extra space.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Conclusion</h2>
+      <p>
+        This solution efficiently removes duplicates, allowing each element to
+        appear at most twice, while maintaining low time and space complexity.
+        The final result contains the count of valid elements and modifies the
+        array in-place.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Java Code</h2>
+      <code>
+        class Solution {<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;public int removeDuplicates(int[] nums) {<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int count = 0;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (int n : nums) {<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if
+        (count < 2 || n != nums[count-2]) {<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nums[count]
+        = n;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count++;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return count;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        }
+      </code>
+    </div>
+  </body>
+</html>
