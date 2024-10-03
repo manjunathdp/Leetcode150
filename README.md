@@ -34,6 +34,11 @@ The repository is organized into numbered folders based on the problem solved. E
    - [Solution](src/_004/RemoveDuplicates2.java): `RemoveDuplicates2.java`
    - [Explanation](src/_004/Remove%20Duplicates%202.html): `Remove Duplicates from Sorted Array Solved.html`
 
+5. **Problem : Majority Element**
+   - [Path](src/_005): `src/_005/`
+   - [Solution](src/_005/MajorityElement.java): `MajorityElement.java`
+   - [Explanation](src/_005/Majority%20Element.html): `Majority Element.html`
+
 ## How to Use
 
 1. Clone the repository:
