@@ -5,11 +5,15 @@ public class MajorityElement {
         int candidate = 0;
         int points = 0;
 
-        for (int num : nums) {
-            if (points == 0) {
-                candidate = num;
+        for(int i = 0; i < nums.length; i++) {
+            if(points == 0) {
+                candidate = nums[i];
             }
-            points += (candidate == num) ? 1 : -1;
+            if(candidate == nums[i]) {
+                points++;
+            } else {
+                points--;
+            }
         }
         return candidate;
     }
