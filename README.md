@@ -30,7 +30,7 @@ The repository is organized into numbered folders based on the problem solved. E
    - [Explanation](src/_003/Remove%20Duplicates%20from%20Sorted%20Array%20Solved.html): `Remove Duplicates from Sorted Array Solved.html`
 
 4. **Problem : Remove Duplicates from Sorted Array II**
-   - [Path](src/_004): `src/_003/`
+   - [Path](src/_004): `src/_004/`
    - [Solution](src/_004/RemoveDuplicates2.java): `RemoveDuplicates2.java`
    - [Explanation](src/_004/Remove%20Duplicates%202.html): `Remove Duplicates from Sorted Array Solved.html`
 
