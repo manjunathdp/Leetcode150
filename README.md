@@ -39,6 +39,11 @@ The repository is organized into numbered folders based on the problem solved. E
    - [Solution](src/_005/MajorityElement.java): `MajorityElement.java`
    - [Explanation](src/_005/Majority%20Element.html): `Majority Element.html`
 
+6. **Problem : Rotate Array**
+   - [Path](src/_006): `src/_006/`
+   - [Solution](src/_006/RotateArray.java): `RotateArray.java`
+   - [Explanation](src/_006/Rotate%20Array.html): `Rotate Array.html`
+
 ## How to Use
 
 1. Clone the repository:
