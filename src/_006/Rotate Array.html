@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rotate Array - Solution Explanation</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f7fa;
+        color: #333;
+        margin: 20px;
+      }
+      h1,
+      h2 {
+        color: #5c67f5;
+        text-shadow: 2px 2px #b6b9ff;
+      }
+      .section {
+        background-color: #ffffff;
+        padding: 20px;
+        margin-bottom: 25px;
+        border-left: 6px solid #5c67f5;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+      .step {
+        color: #0288d1;
+        font-weight: bold;
+        margin-top: 15px;
+      }
+      pre {
+        background-color: #eee;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 15px;
+        overflow-x: auto;
+      }
+      .array {
+        background-color: #d1f5d3;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 6px;
+        display: inline-block;
+        color: #2e7d32;
+        font-weight: bold;
+        box-shadow: 0 2px 8px rgba(46, 125, 50, 0.2);
+      }
+      .highlight {
+        color: #e65100;
+        background-color: #ffecb3;
+        padding: 2px 5px;
+        border-radius: 4px;
+      }
+      .key-info {
+        background-color: #cfe2ff;
+        padding: 10px;
+        border-radius: 6px;
+        margin: 15px 0;
+        font-weight: bold;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        color: #054084;
+      }
+      .code-box {
+        background-color: #fcf4e1;
+        border: 1px solid #fbc02d;
+        border-radius: 8px;
+        padding: 15px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      }
+      pre code {
+        color: #d84315;
+      }
+      .conclusion {
+        background-color: #fff9c4;
+        padding: 20px;
+        border-left: 6px solid #fdd835;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(253, 216, 53, 0.4);
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Rotate Array - Java Solution</h1>
+
+    <div class="section">
+      <h2>1. Problem Statement</h2>
+      <p>
+        Given an array <strong>nums</strong>, rotate the array to the right by
+        <strong>k</strong> steps, where <strong>k</strong> is non-negative.
+      </p>
+      <h3>Example 1:</h3>
+      <div class="key-info">
+        Input: nums = [1,2,3,4,5,6,7], k = 3<br />Output: [5,6,7,1,2,3,4]
+      </div>
+      <h3>Example 2:</h3>
+      <div class="key-info">
+        Input: nums = [-1,-100,3,99], k = 2<br />Output: [3,99,-1,-100]
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>2. Algorithm: Array Reversal</h2>
+      <p>This approach uses three steps:</p>
+      <ol>
+        <li>Reverse the entire array.</li>
+        <li>Reverse the first <code>k</code> elements.</li>
+        <li>Reverse the remaining <code>n - k</code> elements.</li>
+      </ol>
+    </div>
+
+    <div class="section">
+      <h2>3. Step-by-Step Explanation with Visualization</h2>
+
+      <h3>Example 1: Input Array: [1,2,3,4,5,6,7], k = 3</h3>
+
+      <p><span class="step">Step 1:</span> Reverse the entire array</p>
+      <div class="array">
+        Array: [ <span class="highlight">7, 6, 5, 4, 3, 2, 1</span> ]
+      </div>
+
+      <p><span class="step">Step 2:</span> Reverse the first 3 elements</p>
+      <div class="array">
+        Array: [ <span class="highlight">5, 6, 7</span>, 4, 3, 2, 1 ]
+      </div>
+
+      <p><span class="step">Step 3:</span> Reverse the remaining 4 elements</p>
+      <div class="array">
+        Array: [ 5, 6, 7, <span class="highlight">1, 2, 3, 4</span> ]
+      </div>
+
+      <p>
+        <span class="step">Final Result:</span> The rotated array is
+        <strong>[5, 6, 7, 1, 2, 3, 4]</strong>
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>4. Time and Space Complexity</h2>
+      <p>
+        <strong>Time Complexity:</strong> O(n), where <strong>n</strong> is the
+        length of the array.
+      </p>
+      <p>
+        <strong>Space Complexity:</strong> O(1), since all operations are
+        performed in-place.
+      </p>
+    </div>
+
+    <div class="conclusion">
+      <h2>5. Conclusion</h2>
+      <p>
+        The three-step reversal method is an efficient solution to rotate an
+        array. It uses <strong>O(n)</strong> time complexity and performs the
+        operations in-place using <strong>O(1)</strong> space.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>6. Java Code</h2>
+      <div class="code-box">
+        <pre><code>
+// Rotate Array Solution (Array Reversal)
+class Solution {
+    public void rotate(int[] nums, int k) {
+        k = k % nums.length;
+        rotate(nums, 0, nums.length - 1);
+        rotate(nums, 0, k - 1);
+        rotate(nums, k, nums.length - 1);
+    }
+
+    private void rotate(int[] nums, int start, int end) {
+        while (start < end) {
+            int temp = nums[start];
+            nums[start] = nums[end];
+            nums[end] = temp;
+            start++;
+            end--;
+        }
+    }
+}
+        </code></pre>
+      </div>
+    </div>
+  </body>
+</html>
