@@ -44,6 +44,11 @@ The repository is organized into numbered folders based on the problem solved. E
    - [Solution](src/_006/RotateArray.java): `RotateArray.java`
    - [Explanation](src/_006/Rotate%20Array.html): `Rotate Array.html`
 
+7. **Problem : Best Time to Buy and Sell Stock**
+   - [Path](src/_007): `src/_007/`
+   - [Solution](src/_007/MaxProfit.java): `MaxProfit.java`
+   - [Explanation](src/_007/Best-time-to-buy-and-sell-stock.html): `Best-time-to-buy-and-sell-stock.html`
+
 ## How to Use
 
 1. Clone the repository:
