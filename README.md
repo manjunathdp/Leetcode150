@@ -53,7 +53,10 @@ The repository is organized into numbered folders based on the problem solved. E
    - [Path](src/_008): `src/_008/`
    - [Solution](src/_008/JumpingGame.java): `JumpingGame.java`
 
-[//]: # (   - [Explanation]&#40;src/_008/Best-time-to-buy-and-sell-stock.html&#41;: `Best-time-to-buy-and-sell-stock.html`)
+9. **Problem : Best Time to Buy and Sell Stock II**
+   - [Path](src/_009): `src/_009/`
+   - [Solution](src/_009/StockProfit.java): `StockProfit.java`
+
 
 ## How to Use
 
