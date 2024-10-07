@@ -49,6 +49,12 @@ The repository is organized into numbered folders based on the problem solved. E
    - [Solution](src/_007/MaxProfit.java): `MaxProfit.java`
    - [Explanation](src/_007/Best-time-to-buy-and-sell-stock.html): `Best-time-to-buy-and-sell-stock.html`
 
+8. **Problem : Jumping Game**
+   - [Path](src/_008): `src/_008/`
+   - [Solution](src/_008/JumpingGame.java): `JumpingGame.java`
+
+[//]: # (   - [Explanation]&#40;src/_008/Best-time-to-buy-and-sell-stock.html&#41;: `Best-time-to-buy-and-sell-stock.html`)
+
 ## How to Use
 
 1. Clone the repository:
