@@ -56,6 +56,10 @@ The repository is organized into numbered folders based on the problem solved. E
 9. **Problem : Best Time to Buy and Sell Stock II**
    - [Path](src/_009): `src/_009/`
    - [Solution](src/_009/StockProfit.java): `StockProfit.java`
+   
+10. **Problem : Jumping Game II**
+    - [Path](src/_010): `src/_010/`
+    - [Solution](src/_010/JumpGame2.java): `JumpGame2.java`
 
 
 ## How to Use
