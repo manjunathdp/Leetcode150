@@ -61,6 +61,10 @@ The repository is organized into numbered folders based on the problem solved. E
     - [Path](src/_010): `src/_010/`
     - [Solution](src/_010/JumpGame2.java): `JumpGame2.java`
 
+11. **Problem : H-Index**
+    - [Path](src/_011): `src/_011/`
+    - [Solution](src/_011/HIndex.java): `HIndex.java`
+
 
 ## How to Use
 
